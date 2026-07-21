@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Vault Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+<header class="topbar">
+
+    <div class="logo-area">
+        <i class="fa-solid fa-vault"></i>
+        <h1>Live Vault</h1>
+    </div>
+
+    <div class="right-area">
+
+        <button id="themeBtn" class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button id="logoutBtn" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+</header>
+<!-- ==========================
+     SEARCH & FILTERS
+========================== -->
+
+<section class="controls">
+
+    <!-- Search -->
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search by Name, Document or Number...">
+
+    <!-- Name Filter -->
+    <select id="nameFilter">
+        <option value="">👤 All Names</option>
+    </select>
+
+    <!-- Document Filter -->
+    <select id="documentFilter">
+        <option value="">📄 All Documents</option>
+    </select>
+
+</section>
+
+<!-- ==========================
+     DASHBOARD CARDS
+========================== -->
+
+<section class="dashboard-cards">
+
+    <div class="card">
+        <i class="fa-solid fa-folder-open"></i>
+        <h4>Total Documents</h4>
+        <h2 id="totalDocuments">0</h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-users"></i>
+        <h4>Total Persons</h4>
+        <h2 id="totalPersons">0</h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-file-lines"></i>
+        <h4>Document Types</h4>
+        <h2 id="totalTypes">0</h2>
+    </div>
+
+</section>
+<!-- ==========================
+     DOCUMENT TABLE
+========================== -->
+
+<section class="table-section">
+
+    <table id="documentTable">
+
+        <thead>
+            <tr>
+                <th>S No</th>
+                <th>Name</th>
+                <th>Name of the Document</th>
+                <th>Document Number</th>
+                <th>Document Proof</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody">
+
+            <!-- Google Sheet Data will load here -->
+
+            <tr>
+                <td colspan="5" style="text-align:center;padding:30px;">
+                    Loading documents...
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+    <p>
+        © 2026 Live Vault | Secure Document Dashboard
+    </p>
+</footer>
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
