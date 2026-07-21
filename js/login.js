@@ -4,7 +4,7 @@
 
 // Login Credentials
 const VALID_USERNAME = "Jampana";
-const VALID_PASSWORD = "Jagadeesh";
+const VALID_PASSWORD = "1997";
 
 // Already Logged In
 if (localStorage.getItem("liveVaultLogin") === "true") {
