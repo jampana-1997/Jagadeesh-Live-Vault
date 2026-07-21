@@ -85,15 +85,25 @@ fetch(SHEET_URL)
 
 function displayTable(data){
 
-    // Dashboard Cards
-    document.getElementById("totalDocuments").textContent = documents.length;
+    // Dashboard Cards (Based on current data)
 
-    document.getElementById("totalPersons").textContent =
-        new Set(documents.map(d => d.name)).size;
+let validData = data.filter(item => item.name.trim() !== "");
 
-    document.getElementById("totalTypes").textContent =
-        new Set(documents.map(d => d.documentName)).size;
+document.getElementById("totalDocuments").textContent =
+    validData.length;
 
+
+document.getElementById("totalPersons").textContent =
+    new Set(
+        validData.map(item => item.name.trim())
+    ).size;
+
+
+document.getElementById("totalTypes").textContent =
+    new Set(
+        validData.map(item => item.documentName.trim())
+    ).size;
+    
     tableBody.innerHTML = "";
 
     if(data.length === 0){
